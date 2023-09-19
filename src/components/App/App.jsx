@@ -1,8 +1,7 @@
-function App() {
+import Navbar from "../Navbar/Navbar";
 
-  return (
-    <h1>HelloWorld</h1>
-  )
+function App() {
+  return <Navbar />;
 }
 
-export default App
+export default App;
