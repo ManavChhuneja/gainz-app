@@ -1,0 +1,12 @@
+.nav-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-basis: 30%;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-basis: 200px;
+  }
+}

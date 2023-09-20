@@ -1,0 +1,12 @@
+p {
+  font-family: Poppins, sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  p {
+    font-size: 1.5rem;
+  }
+}
