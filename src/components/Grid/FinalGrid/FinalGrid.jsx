@@ -1,17 +1,19 @@
-import GridContainer from "../GridContainer/GridContainer";
 import Headline from "../Headline/Headline";
 import WorkoutTemplate from "../WorkoutTemplate/WorkoutTemplate";
+import styles from "./FinalGrid.module.css";
 
 const FinalGrid = () => {
   return (
     <>
-      <GridContainer>
+      <div className={styles.secondGridContainer}>
         <Headline text="Workout Routines" />
+        <WorkoutTemplate />
+        <WorkoutTemplate />
+      </div>
+      <div className={styles.secondGridContainer}>
         <Headline text="Build your own routine (coming soon)" />
         <WorkoutTemplate />
-        <WorkoutTemplate />
-        <WorkoutTemplate />
-      </GridContainer>
+      </div>
     </>
   );
 };

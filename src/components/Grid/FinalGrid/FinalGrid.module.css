@@ -1,0 +1,8 @@
+.secondGridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  width: clamp(400px, calc(50% + (1200px - 100vw) * 0.02), 700px);
+  margin: auto;
+}
