@@ -16,7 +16,7 @@
   background-color: #79c9fa;
   grid-row: span 2;
   border-radius: 20px;
-  padding-left: 10px;
+  padding: 10px;
 }
 
 .workout-title + ul > li {
