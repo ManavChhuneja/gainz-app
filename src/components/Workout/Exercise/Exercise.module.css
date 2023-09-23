@@ -1,0 +1,32 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  place-items: center;
+  gap: 10px;
+  color: white;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.exerciseTitle {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-weight: 700;
+}
+
+.gridItem {
+  max-height: 70px;
+  overflow: auto;
+  margin: 0;
+  border-radius: 5px;
+  border-color: transparent;
+  border: 0;
+  padding: 10px;
+}
+
+.inputElement {
+  width: clamp(50px, 70%, 200px);
+}
