@@ -1,5 +1,6 @@
-const startingStrength = {
-  "Workout A": {
+const startingStrength = [
+  {
+    name: "Workout A",
     id: 0,
     exercises: [
       {
@@ -22,7 +23,8 @@ const startingStrength = {
       },
     ],
   },
-  "Workout B": {
+  {
+    name: "Workout B",
     id: 1,
     exercises: [
       {
@@ -45,6 +47,6 @@ const startingStrength = {
       },
     ],
   },
-};
+];
 
 export default startingStrength;

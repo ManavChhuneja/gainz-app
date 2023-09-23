@@ -1,13 +1,23 @@
 import "./WorkoutTemplate.css";
 
-const WorkoutTemplate = () => {
+const WorkoutTemplate = (props) => {
+  const clickHandler = () => {
+    props.workoutSelectedHandler(true);
+  };
   return (
-    <div className="workout-template">
-      <h3 className="workout-title">Workout A</h3>
+    <div className="workout-template" onClick={clickHandler}>
+      <h3 className="workout-title">{props.workout.name}</h3>
       <ul>
-        <li>Exercise Name x 5</li>
-        <li>Exercise Name x 5</li>
-        <li>Exercise Name x 5</li>
+        {props.workout.exercises.map((exercise) => {
+          return (
+            <li key={exercise.id}>
+              {exercise.title}{" "}
+              <strong>
+                {exercise.sets}x{exercise.reps}
+              </strong>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

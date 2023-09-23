@@ -22,3 +22,7 @@
 .workout-title + ul > li {
   list-style: none;
 }
+
+.workout-template:hover {
+  cursor: pointer;
+}

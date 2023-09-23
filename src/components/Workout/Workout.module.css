@@ -5,6 +5,7 @@
   grid-auto-rows: 1fr;
   background-color: #79c9fa;
   border-radius: 20px;
+  margin: 0 5%;
 }
 
 @media (max-width: 768px) {
@@ -18,4 +19,23 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: white;
+}
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5%;
+}
+
+@media (max-width: 768px) {
+  .flexContainer,
+  .gridContainer {
+    margin: 0;
+  }
+}
+
+.workoutTitle:nth-child(2) {
+  text-decoration: underline;
+}
+.workoutTitle:nth-child(2):hover {
+  cursor: pointer;
 }
