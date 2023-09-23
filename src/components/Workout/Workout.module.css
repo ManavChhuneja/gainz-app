@@ -12,3 +12,10 @@
     grid-template-columns: 1fr;
   }
 }
+
+.workoutTitle {
+  font-family: Poppins, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}

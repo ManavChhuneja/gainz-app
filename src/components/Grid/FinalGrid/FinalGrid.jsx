@@ -10,10 +10,6 @@ const FinalGrid = () => {
         <WorkoutTemplate />
         <WorkoutTemplate />
       </div>
-      <div className={styles.secondGridContainer}>
-        <Headline text="Build your own routine (coming soon)" />
-        <WorkoutTemplate />
-      </div>
     </>
   );
 };

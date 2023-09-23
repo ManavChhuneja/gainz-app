@@ -5,8 +5,8 @@ import Workout from "../Workout/Workout";
 function App() {
   return (
     <>
-      {/* <Navbar />
-      <FinalGrid /> */}
+      <Navbar />
+      <FinalGrid />
       <Workout />
     </>
   );

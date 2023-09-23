@@ -1,5 +1,5 @@
 const startingStrength = {
-  workoutA: {
+  "Workout A": {
     id: 0,
     exercises: [
       {
@@ -22,7 +22,7 @@ const startingStrength = {
       },
     ],
   },
-  workoutB: {
+  "Workout B": {
     id: 1,
     exercises: [
       {

@@ -3,13 +3,16 @@ import startingStrength from "../../../public/startingStrength";
 import Exercise from "./Exercise/Exercise";
 
 const Workout = () => {
-  const selectedWorkout = startingStrength.workoutA;
+  const selectedWorkout = startingStrength["Workout A"];
   return (
-    <div className={styles.gridContainer}>
-      {selectedWorkout.exercises.map((exercise) => {
-        return <Exercise title={exercise.title} sets={exercise.sets} />;
-      })}
-    </div>
+    <>
+      <h2 className={styles.workoutTitle}>Workout A</h2>
+      <div className={styles.gridContainer}>
+        {selectedWorkout.exercises.map((exercise) => {
+          return <Exercise title={exercise.title} sets={exercise.sets} />;
+        })}
+      </div>
+    </>
   );
 };
 
