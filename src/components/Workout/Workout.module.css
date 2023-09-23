@@ -26,6 +26,12 @@
 .workoutTitle:nth-child(2):hover {
   cursor: pointer;
 }
+.workoutTitle:nth-child(3) {
+  text-decoration: underline;
+}
+.workoutTitle:nth-child(3):hover {
+  cursor: pointer;
+}
 @media (max-width: 768px) {
   .gridContainer {
     grid-template-columns: 1fr;

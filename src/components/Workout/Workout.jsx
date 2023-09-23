@@ -15,6 +15,9 @@ const Workout = (props) => {
         <h2 className={styles.workoutTitle} onClick={clickHandler}>
           Finish Workout
         </h2>
+        <h2 className={styles.workoutTitle} onClick={clickHandler}>
+          Cancel Workout
+        </h2>
       </div>
       <div className={styles.gridContainer}>
         {selectedWorkout.exercises.map((exercise) => {
