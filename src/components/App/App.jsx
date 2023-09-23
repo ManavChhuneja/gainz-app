@@ -8,15 +8,24 @@ function App() {
   const workoutSelectedHandler = (data) => {
     setIsWorkoutSelected(data);
   };
-  const workoutIdSelector = () => {};
+  const [workoutId, setWorkoutId] = useState(0);
+  const workoutIdSelector = (workout) => {
+    setWorkoutId(workout);
+  };
   return (
     <>
       <Navbar />
       {!isWorkoutSelected && (
-        <FinalGrid workoutSelectedHandler={workoutSelectedHandler} />
+        <FinalGrid
+          workoutSelectedHandler={workoutSelectedHandler}
+          workoutIdManager={workoutIdSelector}
+        />
       )}
       {isWorkoutSelected && (
-        <Workout finishWorkoutHandler={workoutSelectedHandler} />
+        <Workout
+          finishWorkoutHandler={workoutSelectedHandler}
+          workoutId={workoutId}
+        />
       )}
     </>
   );

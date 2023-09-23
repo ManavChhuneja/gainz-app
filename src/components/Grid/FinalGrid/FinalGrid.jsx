@@ -8,16 +8,16 @@ const FinalGrid = (props) => {
     <>
       <div className={styles.secondGridContainer}>
         <Headline text="Workout Routines" />
-        <WorkoutTemplate
-          workout={startingStrength[0]}
-          id="0"
-          workoutSelectedHandler={props.workoutSelectedHandler}
-        />
-        <WorkoutTemplate
-          workout={startingStrength[1]}
-          id="1"
-          workoutSelectedHandler={props.workoutSelectedHandler}
-        />
+        {startingStrength.map((workout, index) => {
+          return (
+            <WorkoutTemplate
+              workout={workout}
+              id={index}
+              workoutSelectedHandler={props.workoutSelectedHandler}
+              workoutIdManager={props.workoutIdManager}
+            />
+          );
+        })}
       </div>
     </>
   );

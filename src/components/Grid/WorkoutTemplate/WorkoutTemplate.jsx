@@ -3,6 +3,7 @@ import "./WorkoutTemplate.css";
 const WorkoutTemplate = (props) => {
   const clickHandler = () => {
     props.workoutSelectedHandler(true);
+    props.workoutIdManager(parseInt(props.id));
   };
   return (
     <div className="workout-template" onClick={clickHandler}>

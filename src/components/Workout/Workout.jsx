@@ -3,7 +3,8 @@ import startingStrength from "../../../public/startingStrength";
 import Exercise from "./Exercise/Exercise";
 
 const Workout = (props) => {
-  const selectedWorkout = startingStrength[0];
+  const selectedWorkoutID = parseInt(props.workoutId);
+  const selectedWorkout = startingStrength[selectedWorkoutID];
   const clickHandler = () => {
     props.finishWorkoutHandler(false);
   };
