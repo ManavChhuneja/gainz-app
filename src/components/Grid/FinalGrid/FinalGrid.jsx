@@ -1,7 +1,7 @@
 import Headline from "../Headline/Headline";
 import WorkoutTemplate from "../WorkoutTemplate/WorkoutTemplate";
 import styles from "./FinalGrid.module.css";
-import startingStrength from "../../../../public/startingStrength";
+import startingStrength from "../../../../startingStrength";
 
 const FinalGrid = (props) => {
   return (

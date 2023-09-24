@@ -1,5 +1,5 @@
 import styles from "./Workout.module.css";
-import startingStrength from "../../../public/startingStrength";
+import startingStrength from "../../../startingStrength";
 import Exercise from "./Exercise/Exercise";
 
 const Workout = (props) => {
@@ -13,17 +13,23 @@ const Workout = (props) => {
       <div className={styles.flexContainer}>
         <h2 className={styles.workoutTitle}>{selectedWorkout.name}</h2>
         <div className={styles.flexContainerTwo}>
-        <h2 className={styles.workoutTitle} onClick={clickHandler}>
-          Finish Workout
-        </h2>
-        <h2 className={styles.workoutTitle} onClick={clickHandler}>
-          Cancel Workout
+          <h2 className={styles.workoutTitle} onClick={clickHandler}>
+            Finish Workout
           </h2>
-          </div>
+          <h2 className={styles.workoutTitle} onClick={clickHandler}>
+            Cancel Workout
+          </h2>
+        </div>
       </div>
       <div className={styles.gridContainer}>
         {selectedWorkout.exercises.map((exercise) => {
-          return <Exercise key={exercise.id} title={exercise.title} sets={exercise.sets} />;
+          return (
+            <Exercise
+              key={exercise.id}
+              title={exercise.title}
+              sets={exercise.sets}
+            />
+          );
         })}
       </div>
     </>
