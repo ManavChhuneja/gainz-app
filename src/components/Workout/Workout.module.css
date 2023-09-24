@@ -20,16 +20,14 @@
   margin: 0 5%;
 }
 
-.workoutTitle:nth-child(2) {
+.flexContainerTwo {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.flexContainerTwo .workoutTitle {
   text-decoration: underline;
-}
-.workoutTitle:nth-child(2):hover {
-  cursor: pointer;
-}
-.workoutTitle:nth-child(3) {
-  text-decoration: underline;
-}
-.workoutTitle:nth-child(3):hover {
   cursor: pointer;
 }
 @media (max-width: 768px) {
@@ -43,4 +41,8 @@
   .workoutTitle {
     font-size: 1rem;
   }
+}
+
+.flexContainerTwo .workoutTitle:nth-child(2) {
+  color: #F974A6;
 }

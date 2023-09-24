@@ -12,16 +12,18 @@ const Workout = (props) => {
     <>
       <div className={styles.flexContainer}>
         <h2 className={styles.workoutTitle}>{selectedWorkout.name}</h2>
+        <div className={styles.flexContainerTwo}>
         <h2 className={styles.workoutTitle} onClick={clickHandler}>
           Finish Workout
         </h2>
         <h2 className={styles.workoutTitle} onClick={clickHandler}>
           Cancel Workout
-        </h2>
+          </h2>
+          </div>
       </div>
       <div className={styles.gridContainer}>
         {selectedWorkout.exercises.map((exercise) => {
-          return <Exercise title={exercise.title} sets={exercise.sets} />;
+          return <Exercise key={exercise.id} title={exercise.title} sets={exercise.sets} />;
         })}
       </div>
     </>
