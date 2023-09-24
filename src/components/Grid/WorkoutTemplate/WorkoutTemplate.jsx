@@ -2,7 +2,9 @@ import "./WorkoutTemplate.css";
 
 const WorkoutTemplate = (props) => {
   const clickHandler = () => {
-    props.workoutSelectedHandler(true);
+    if (props.userAuthStatus) {
+      props.workoutSelectedHandler(true);
+    }
     props.workoutIdManager(parseInt(props.id));
   };
   return (

@@ -13,8 +13,10 @@ const FinalGrid = (props) => {
             <WorkoutTemplate
               workout={workout}
               id={index}
+              key={index}
               workoutSelectedHandler={props.workoutSelectedHandler}
               workoutIdManager={props.workoutIdManager}
+              userAuthStatus={props.userAuthStatus}
             />
           );
         })}
