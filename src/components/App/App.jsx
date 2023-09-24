@@ -27,6 +27,7 @@ function App() {
       )}
       {user && isWorkoutSelected && (
         <Workout
+          user={user}
           finishWorkoutHandler={workoutSelectedHandler}
           workoutId={workoutId}
         />
