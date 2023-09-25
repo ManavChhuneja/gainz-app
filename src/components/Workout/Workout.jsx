@@ -14,6 +14,7 @@ const Workout = (props) => {
   const [exerciseData, setExerciseData] = useState(
     selectedWorkout.exercises.map((exercise) => ({
       id: exercise.id,
+      name: exercise.title,
       weights: Array(exercise.sets).fill(null),
       reps: Array(exercise.sets).fill(null),
       completed: Array(exercise.sets).fill(false),
