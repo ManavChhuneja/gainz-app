@@ -7,10 +7,12 @@ import { db } from "../../firebase";
 
 const Workout = (props) => {
   const selectedWorkoutID = parseInt(props.workoutId);
-  const selectedWorkout = startingStrength[selectedWorkoutID];
+  const selectedWorkout = startingStrength[selectedWorkoutID]; // rendering workout based on workoutID assuming position in array matches workout ID
+  // changing the isWorkoutSelected state in the app component when users click cancel workout
   const cancelWorkoutHandler = () => {
     props.finishWorkoutHandler(false);
   };
+  // defining state to manage the workout data being logged by users in the Exercise component
   const [exerciseData, setExerciseData] = useState(
     selectedWorkout.exercises.map((exercise) => ({
       id: exercise.id,
@@ -20,6 +22,8 @@ const Workout = (props) => {
       completed: Array(exercise.sets).fill(false),
     }))
   );
+
+  // defining function to be passed down as props to Exercise to change the state
   const handleInputChange = (exerciseId, setType, setIndex, value) => {
     const updatedData = [...exerciseData];
     const exercise = updatedData.find((ex) => ex.id === exerciseId);
@@ -34,6 +38,8 @@ const Workout = (props) => {
 
     setExerciseData(updatedData);
   };
+
+  // defining click handler to push the state value when users click finish to the firestore database to the workout collection
   const clickHandler = () => {
     const docRef = addDoc(collection(db, "workout"), {
       uid: props.user.uid,

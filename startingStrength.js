@@ -49,4 +49,6 @@ const startingStrength = [
   },
 ];
 
+// static workout template
+
 export default startingStrength;

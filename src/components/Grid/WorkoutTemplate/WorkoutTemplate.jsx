@@ -2,6 +2,7 @@ import "./WorkoutTemplate.css";
 
 const WorkoutTemplate = (props) => {
   const clickHandler = () => {
+    // conditionally updating the selection handler state if user is logged in
     if (props.userAuthStatus) {
       props.workoutSelectedHandler(true);
     }
