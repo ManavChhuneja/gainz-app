@@ -4,6 +4,7 @@ import Workout from "../Workout/Workout";
 import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";
+import History from "../History/History";
 
 function App() {
   const [isWorkoutSelected, setIsWorkoutSelected] = useState(false);
@@ -32,6 +33,7 @@ function App() {
           workoutId={workoutId}
         />
       )}
+      <History />
     </>
   );
 }
