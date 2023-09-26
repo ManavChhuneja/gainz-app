@@ -1,0 +1,48 @@
+.gridContainer {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.history {
+  color: white;
+  font-family: Poppins;
+  width: clamp(370px, 45%, 800px);
+  margin: auto;
+}
+
+.workout {
+  background-color: #79c9fa;
+
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+
+  border-radius: 20px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.workout p {
+  font-size: 1rem;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.exercises {
+  border-bottom: 1px solid white;
+}
+
+.workout .exercises:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .workout {
+    width: 90%;
+  }
+}

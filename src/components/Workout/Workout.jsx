@@ -41,11 +41,16 @@ const Workout = (props) => {
 
   // defining click handler to push the state value when users click finish to the firestore database to the workout collection
   const clickHandler = () => {
+    const today = new Date();
     const docRef = addDoc(collection(db, "workout"), {
       uid: props.user.uid,
       workoutName: selectedWorkout.name,
       workoutID: selectedWorkout.id,
       exercises: exerciseData,
+      date: `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(
+        2,
+        "0"
+      )}-${String(today.getDate()).padStart(2, "0")}`,
     })
       .then((success) => {
         console.log("Workout logged successfully");

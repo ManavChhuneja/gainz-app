@@ -17,6 +17,7 @@ const FinalGrid = (props) => {
               workoutSelectedHandler={props.workoutSelectedHandler}
               workoutIdManager={props.workoutIdManager}
               userAuthStatus={props.userAuthStatus}
+              historyHandler={props.historyHandler}
             />
           );
         })}

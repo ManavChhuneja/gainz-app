@@ -15,7 +15,7 @@ const Navbar = (props) => {
           <NavItem text="Login" signInMethod={signInWithGoogle} />
         )}
         {props.userAuthStatus ? (
-          <NavItem text="History" signInMethod={signOut} />
+          <NavItem text="History" historyHandler={props.historyHandler} />
         ) : (
           <NavItem text="Sign Up" signInMethod={signInWithGoogle} />
         )}

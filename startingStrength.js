@@ -18,7 +18,7 @@ const startingStrength = [
       {
         id: 2,
         title: "Conventional Deadlift",
-        sets: 1,
+        sets: 3,
         reps: 5,
       },
     ],

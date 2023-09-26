@@ -7,6 +7,7 @@ const WorkoutTemplate = (props) => {
       props.workoutSelectedHandler(true);
     }
     props.workoutIdManager(parseInt(props.id)); // changing the workoutID state in the App to render the component that was clicked.
+    props.historyHandler();
   };
   return (
     <div className="workout-template" onClick={clickHandler}>

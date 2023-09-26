@@ -9,6 +9,7 @@ import History from "../History/History";
 function App() {
   // managing state for the workouts - when users click on the workouts, the state changes and causes re-render
   const [isWorkoutSelected, setIsWorkoutSelected] = useState(false);
+  const [historySelected, setHistorySelected] = useState(false);
   const workoutSelectedHandler = (data) => {
     setIsWorkoutSelected(data);
     // defining the function to be passed down as props to components which will trigger the state change
@@ -19,16 +20,24 @@ function App() {
     setWorkoutId(workout);
   };
 
+  const historyHandler = () => {
+    setHistorySelected((prevState) => {
+      return !prevState;
+    });
+    console.log(historySelected);
+  };
+
   // managing auth state using react firebase hooks library
   const [user, loading, error] = useAuthState(auth);
   return (
     <>
-      <Navbar userAuthStatus={user} />
+      <Navbar userAuthStatus={user} historyHandler={historyHandler} />
       {!isWorkoutSelected && (
         <FinalGrid
           workoutSelectedHandler={workoutSelectedHandler}
           workoutIdManager={workoutIdSelector}
           userAuthStatus={user}
+          historyHandler={historyHandler}
         />
       )}
       {user && isWorkoutSelected && (
@@ -38,7 +47,11 @@ function App() {
           workoutId={workoutId}
         />
       )}
-      <History />
+      {user && historySelected && (
+        <>
+          <History user={user} />
+        </>
+      )}
     </>
   );
 }
