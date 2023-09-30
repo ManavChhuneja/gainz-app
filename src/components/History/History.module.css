@@ -24,7 +24,8 @@
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
 }
 
-.workout p {
+.workout p,
+p.noHistory {
   font-size: 1rem;
 }
 

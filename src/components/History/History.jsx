@@ -12,6 +12,9 @@ const History = (props) => {
   return (
     <div className={styles.history}>
       <h2>History</h2>
+      {!workouts.length && (
+        <p className={styles.noHistory}>No history to show.</p>
+      )}
       {workouts.map((workout) => (
         <div key={workout.workoutID} className={styles.workout}>
           {" "}
