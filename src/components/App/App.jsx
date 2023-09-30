@@ -20,10 +20,14 @@ function App() {
     setWorkoutId(workout);
   };
 
-  const historyHandler = () => {
-    setHistorySelected((prevState) => {
-      return !prevState;
-    });
+  const historyHandler = (value) => {
+    if (value === false) {
+      setHistorySelected(false);
+    } else {
+      setHistorySelected((prevState) => {
+        return !prevState;
+      });
+    }
     console.log(historySelected);
   };
 

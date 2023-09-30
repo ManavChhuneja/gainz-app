@@ -2,8 +2,7 @@ import styles from "./Workout.module.css";
 import startingStrength from "../../../startingStrength";
 import Exercise from "./Exercise/Exercise";
 import { useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "../../firebase";
+import setData from "./setData";
 
 const Workout = (props) => {
   const selectedWorkoutID = parseInt(props.workoutId);
@@ -41,23 +40,13 @@ const Workout = (props) => {
 
   // defining click handler to push the state value when users click finish to the firestore database to the workout collection
   const clickHandler = () => {
-    const today = new Date();
-    const docRef = addDoc(collection(db, "workout"), {
-      uid: props.user.uid,
-      workoutName: selectedWorkout.name,
-      workoutID: selectedWorkout.id,
-      exercises: exerciseData,
-      date: `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(
-        2,
-        "0"
-      )}-${String(today.getDate()).padStart(2, "0")}`,
-    })
-      .then((success) => {
-        console.log("Workout logged successfully");
-      })
-      .catch((error) => {
-        console.log("Error logging workout");
-      });
+    setData(
+      props.user.uid,
+      selectedWorkout.name,
+      selectedWorkout.id,
+      exerciseData
+    );
+
     props.finishWorkoutHandler(false);
   };
 

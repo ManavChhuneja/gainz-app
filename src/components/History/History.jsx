@@ -1,25 +1,12 @@
-import { query, collection, getDocs, where } from "firebase/firestore";
-import { db } from "../../firebase";
 import styles from "./History.module.css";
 import { useEffect, useState } from "react";
+import fetchData from "./fetchData";
 
 const History = (props) => {
   const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
-    const q = query(
-      collection(db, "workout"),
-      where("uid", "==", props.user.uid)
-    );
-
-    getDocs(q)
-      .then((snapshot) => {
-        const fetchedWorkouts = snapshot.docs.map((doc) => doc.data());
-        setWorkouts(fetchedWorkouts);
-      })
-      .catch((error) => {
-        console.error("Error fetching workouts:", error);
-      });
+    fetchData(props.user.uid, setWorkouts);
   }, [props.user.uid]);
 
   return (
