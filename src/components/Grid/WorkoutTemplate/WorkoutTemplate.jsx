@@ -5,6 +5,8 @@ const WorkoutTemplate = (props) => {
     // conditionally updating the selection handler state if user is logged in
     if (props.userAuthStatus) {
       props.workoutSelectedHandler(true);
+    } else {
+      alert("Please log in or sign up to continue");
     }
     props.workoutIdManager(parseInt(props.id)); // changing the workoutID state in the App to render the component that was clicked.
     props.historyHandler(false);
