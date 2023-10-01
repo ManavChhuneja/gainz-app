@@ -12,16 +12,14 @@ const Navbar = (props) => {
         {props.userAuthStatus ? (
           <NavItem text="Sign Out" signInMethod={signOut} />
         ) : (
-          <NavItem text="Login" signInMethod={signInWithGoogle} />
+          <NavItem text="Login With Google" signInMethod={signInWithGoogle} />
         )}
         {props.userAuthStatus ? (
           <NavItem
             text="Toggle History"
             historyHandler={props.historyHandler}
           />
-        ) : (
-          <NavItem text="Sign Up" signInMethod={signInWithGoogle} />
-        )}
+        ) : null}
       </NavContainer>
     </NavContainer>
   );
