@@ -1,7 +1,7 @@
 import Navbar from "../Navbar/Navbar";
 import FinalGrid from "../Grid/FinalGrid/FinalGrid";
 import Workout from "../Workout/Workout";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";
 import History from "../History/History";
@@ -19,7 +19,6 @@ function App() {
   const workoutIdSelector = (workout) => {
     setWorkoutId(workout);
   };
-
   const historyHandler = (value) => {
     if (value === false) {
       setHistorySelected(false);
@@ -28,32 +27,38 @@ function App() {
         return !prevState;
       });
     }
-    console.log(historySelected);
   };
 
   // managing auth state using react firebase hooks library
   const [user, loading, error] = useAuthState(auth);
+  console.log(loading);
   return (
     <>
-      <Navbar userAuthStatus={user} historyHandler={historyHandler} />
-      {!isWorkoutSelected && (
-        <FinalGrid
-          workoutSelectedHandler={workoutSelectedHandler}
-          workoutIdManager={workoutIdSelector}
-          userAuthStatus={user}
-          historyHandler={historyHandler}
-        />
-      )}
-      {user && isWorkoutSelected && (
-        <Workout
-          user={user}
-          finishWorkoutHandler={workoutSelectedHandler}
-          workoutId={workoutId}
-        />
-      )}
-      {user && historySelected && (
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
         <>
-          <History user={user} />
+          <Navbar userAuthStatus={user} historyHandler={historyHandler} />
+          {!isWorkoutSelected && (
+            <FinalGrid
+              workoutSelectedHandler={workoutSelectedHandler}
+              workoutIdManager={workoutIdSelector}
+              userAuthStatus={user}
+              historyHandler={historyHandler}
+            />
+          )}
+          {user && isWorkoutSelected && (
+            <Workout
+              user={user}
+              finishWorkoutHandler={workoutSelectedHandler}
+              workoutId={workoutId}
+            />
+          )}
+          {user && historySelected && (
+            <>
+              <History user={user} />
+            </>
+          )}
         </>
       )}
     </>
